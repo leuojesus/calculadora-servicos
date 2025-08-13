@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Custo de Serviço</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>Calculadora de Custo de Serviço</h1>
+
+        <div class="input-group">
+            <label for="valor-hora">Seu Valor por Hora (R$):</label>
+            <input type="number" id="valor-hora" placeholder="Ex: 50.00" min="0" step="1">
+        </div>
+        
+        <div class="input-group">
+            <label>Total de Horas Trabalhadas:</label>
+            <div class="time-input-group">
+                <input type="number" id="horas-trabalhadas" placeholder="Horas" min="0" step="1">
+                <span>:</span>
+                <input type="number" id="minutos-trabalhados" placeholder="Min" min="0" max="59" step="1">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="km-rodado">Distância Total (KM):</label>
+            <input type="number" id="km-rodado" placeholder="Ex: 100" min="0" step="1">
+        </div>
+
+        <div class="input-group">
+            <label for="valor-km">Seu Custo por KM Rodado (R$):</label>
+            <input type="number" id="valor-km" placeholder="Ex: 0.75" min="0" step="0.01">
+        </div>
+        
+        <div class="input-group">
+            <label for="valor-hora-deslocamento">Seu Valor por Hora de Deslocamento (R$):</label>
+            <input type="number" id="valor-hora-deslocamento" placeholder="Ex: 25.00" min="0" step="0.01">
+        </div>
+
+        <div class="input-group">
+            <label>Total de Horas em Deslocamento:</label>
+            <div class="time-input-group">
+                <input type="number" id="horas-deslocamento" placeholder="Horas" min="0" step="1">
+                <span>:</span>
+                <input type="number" id="minutos-deslocamento" placeholder="Min" min="0" max="59" step="1">
+            </div>
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="pedagio-check">
+            <label for="pedagio-check">Adicionar Custos de Pedágio?</label>
+        </div>
+        <div class="input-group hidden" id="pedagio-input-group">
+            <label for="valor-pedagio">Valor Total dos Pedágios (R$):</label>
+            <input type="number" id="valor-pedagio" placeholder="Ex: 25.50" min="0" step="0.01">
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="almoco-check">
+            <label for="almoco-check">Adicionar Custos de Alimentação?</label>
+        </div>
+        <div class="input-group hidden" id="almoco-input-group">
+            <label for="valor-almoco">Valor Total da Alimentação (R$):</label>
+            <input type="number" id="valor-almoco" placeholder="Ex: 30.00" min="0" step="0.01">
+        </div>
+
+        <button onclick="calcular()">Calcular Custo Final</button>
+
+        <div id="resultado" class="resultado">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
